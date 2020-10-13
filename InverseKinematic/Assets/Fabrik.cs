@@ -35,7 +35,7 @@ public class Fabrik : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*Vector3 clickPosition = -Vector3.one;
+        Vector3 clickPosition = -Vector3.one;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -44,7 +44,7 @@ public class Fabrik : MonoBehaviour
             clickPosition = hit.point;
             //Debug.Log(clickPosition);
             target.position = clickPosition;
-        }*/
+        }
 
 
         GoToTargetConstraint();
@@ -93,9 +93,6 @@ public class Fabrik : MonoBehaviour
                 if(ag < angleConstraint)
                 {
                     Vector3 CB = b.normalized;
-                    float alpha = Mathf.Atan2(CB.x, CB.y);
-                    float maxAG = alpha + angleConstraint;
-                    float minAG = alpha - angleConstraint;
 
                     Vector3 v = CB;
                     Vector3 v1 = Quaternion.AngleAxis(angleConstraint, Vector3.forward) * v;
@@ -117,13 +114,39 @@ public class Fabrik : MonoBehaviour
         }
 
         //Forward
-        /*lr.SetPosition(0, start);
+        lr.SetPosition(0, start);
         for (int i = 1; i < lr.positionCount; i++)
         {
             Vector3 pos = lr.GetPosition(i) - lr.GetPosition(i - 1);
             pos = Vector3.Normalize(pos) * lines[i - 1];
             lr.SetPosition(i, pos + lr.GetPosition(i - 1));
-        }*/
+            if (i > 1)
+            {
+                Vector3 a = lr.GetPosition(i) - lr.GetPosition(i-1);
+                Vector3 b = lr.GetPosition(i-2) - lr.GetPosition(i-1);
+                float ag = SignedAngleBetween(a, b, Vector3.Cross(a, b));
+                if (ag < angleConstraint)
+                {
+                    Vector3 CB = b.normalized;
+
+                    Vector3 v = CB;
+                    Vector3 v1 = Quaternion.AngleAxis(angleConstraint, Vector3.forward) * v;
+                    Vector3 v2 = Quaternion.AngleAxis(-angleConstraint, Vector3.forward) * v;
+                    Vector3 pos1 = lr.GetPosition(i-1) + v1;
+                    Vector3 pos2 = lr.GetPosition(i-1) + v2;
+                    if (Vector3.Distance(lr.GetPosition(i), pos1) > Vector3.Distance(lr.GetPosition(i), pos2))
+                    {
+                        pos = pos2;
+                    }
+                    else
+                    {
+                        pos = pos1;
+                    }
+
+                    lr.SetPosition(i, pos);
+                }
+            }
+        }
 
     }
 
