@@ -30,18 +30,24 @@ public class PhysicsManager : MonoBehaviour
 
     void Update()
     {
-        Gravity();
+        //GravitySimulation();
         Viscosite();
-
-        CheckBounds();
-        
+        CheckBounds();       
     }
     public void Gravity()
     {
         foreach (Particule p in lstParticules)
         {
             p.vec3Velocity += fTimeScale * vec3Gravity;
-            //p.transform.position += p.vec3Velocity * fTimeScale;
+        }
+    }
+    
+    public void GravitySimulation()
+    {
+        foreach (Particule p in lstParticules)
+        {
+            p.vec3Velocity += fTimeScale * vec3Gravity;
+            p.transform.position += p.vec3Velocity * fTimeScale;
         }
     }
 
@@ -70,6 +76,7 @@ public class PhysicsManager : MonoBehaviour
 
     void Viscosite()
     {
+        Gravity();
         foreach (Particule p in lstParticules)
         {
             p.vec3PreviousPos = p.transform.position;
@@ -119,7 +126,7 @@ public class PhysicsManager : MonoBehaviour
                 }
             }
 
-            p.transform.position += dx;//WOWOWOWOWOWOW
+            p.transform.position += dx;
         }
     }
 
