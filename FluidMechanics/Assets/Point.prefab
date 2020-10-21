@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4826590886819495125}
   - component: {fileID: 2452313425174034157}
   - component: {fileID: 2341786976037144534}
-  - component: {fileID: 5090839860027391390}
+  - component: {fileID: -4603466797662370435}
   m_Layer: 0
   m_Name: Point
   m_TagString: Untagged
@@ -96,7 +96,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5090839860027391390
+--- !u!114 &-4603466797662370435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,12 +105,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6700128396015484329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bc85985ad9ef2244878dac7f02c5585, type: 3}
+  m_Script: {fileID: 11500000, guid: e025f745042c73b45a6d86009acb3b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fMasse: 10
-  gravity: {x: 0, y: 9.8, z: 0}
-  vec3Pos: {x: 5.9424405, y: 10.085104, z: 8.656363}
-  vec3Acceleration: {x: -10.0079975, y: -9.8, z: -250.19994}
-  vec3Velocity: {x: 1.7998401, y: -0.196, z: 44.996002}
-  bGravity: 1
+  vec3Velocity: {x: 0, y: 0, z: 0}
+  vec3PreviousPos: {x: 0, y: 0, z: 0}
