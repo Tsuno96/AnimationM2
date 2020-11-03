@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2115922305297878137}
   - component: {fileID: 4826590886819495125}
   - component: {fileID: 2452313425174034157}
-  - component: {fileID: 2341786976037144534}
   - component: {fileID: -4603466797662370435}
+  - component: {fileID: -8019486715803267918}
   m_Layer: 0
   m_Name: Point
   m_TagString: Untagged
@@ -83,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &2341786976037144534
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6700128396015484329}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-4603466797662370435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,3 +97,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vec3Velocity: {x: 0, y: 0, z: 0}
   vec3PreviousPos: {x: 0, y: 0, z: 0}
+--- !u!135 &-8019486715803267918
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6700128396015484329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

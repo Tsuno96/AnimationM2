@@ -391,7 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabPoint: {fileID: -4603466797662370435, guid: 088ae25f390b1cc41804b6fc913eef49, type: 3}
   lstParticules: []
-  nPoints: 100
+  nPoints: 250
   vec3Bounds: {x: 5, y: 50, z: 5}
 --- !u!4 &990727624
 Transform:
@@ -419,8 +419,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c14a2dd8264757348845375ae4c16b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fTimeScale: 0.01
-  fk: 0
-  fknear: 0
-  fdensity: 1
-  fradiusCohesion: 3
+  fTimeScale: 0.103
+  fk: 2.49
+  fknear: 2.99
+  fdensity: 5.36
+  fradiusCohesion: 8.11

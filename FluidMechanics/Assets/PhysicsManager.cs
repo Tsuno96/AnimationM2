@@ -130,7 +130,7 @@ public class PhysicsManager : MonoBehaviour
         }
     }
 
-    List<Particule> GetNeighbors(Particule pO)
+    /*List<Particule> GetNeighbors(Particule pO)
     {
         List<Particule> tmpN = new List<Particule>();
         foreach (Particule p in lstParticules)
@@ -141,5 +141,23 @@ public class PhysicsManager : MonoBehaviour
             }
         }
         return tmpN;
+    }*/
+
+    List<Particule> GetNeighbors(Particule pO)
+    {
+        List<Particule> tmpN = new List<Particule>();
+        Collider[] contextColliders;
+        contextColliders = Physics.OverlapSphere(pO.transform.position, fradiusCohesion);
+        foreach(Collider c in contextColliders)
+        {
+            if(c.gameObject !=pO)
+            {
+                tmpN.Add(c.gameObject.GetComponent<Particule>());
+            }
+        }
+
+
+        return tmpN;
     }
+
 }
